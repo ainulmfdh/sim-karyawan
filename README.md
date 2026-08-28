@@ -85,6 +85,5 @@ Ikuti langkah-langkah berikut untuk mengonfigurasi dan menjalankan proyek ini di
    ```bash
    http://127.0.0.1:8000
 
-11. **Jalankan Server Lokal Laravel:**
    email    : ainul@gmail.com
    password : ainul123
