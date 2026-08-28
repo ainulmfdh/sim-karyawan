@@ -85,6 +85,5 @@ Ikuti langkah-langkah berikut untuk mengonfigurasi dan menjalankan proyek ini di
    http://127.0.0.1:8000
 
    Data User Login:
-   ```bash
    email    : ainul@gmail.com
    password : ainul123
