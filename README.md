@@ -38,3 +38,47 @@ Ikuti langkah-langkah berikut untuk mengonfigurasi dan menjalankan proyek ini di
    Jalankan perintah berikut untuk mengunduh seluruh package yang dibutuhkan:
    ```bash
    composer install
+
+3. **Install Dependencies Javascript (NPM):**
+   Jalankan perintah untuk menginstal package frontend:
+   ```bash
+   npm install
+
+4. **Konfigurasi File Environment (.env):**
+   Duplikat file contoh konfigurasi dan buat kunci aplikasi:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+
+   Buka file .env lalu sesuaikan pengaturan database Anda:
+   ```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=nama_database
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+5. **Jalankan Migrasi Database:**
+   Buat tabel-tabel di database lokal menggunakan perintah artisan:
+   ```bash
+   php artisan migrate
+
+6. **Jalankan Seeder Database:**
+   Isi data seeder pada tabel di database menggunakan perintah artisan:
+   ```bash
+   php artisan db:seed
+
+7. **Jalankan Frontend:**
+  Jalankan server Vite untuk memproses Tailwind CSS secara real-time:
+   ```bash
+   npm run dev
+
+8. **Jalankan Server Lokal Laravel:**
+  Buka terminal terpisah, lalu jalankan perintah server utama:
+   ```bash
+   php artisan serve
+
+  Akses aplikasi melalui browser di alamat:
+   ```bash
+   http://127.0.0.1:8000
