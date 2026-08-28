@@ -80,10 +80,12 @@ Ikuti langkah-langkah berikut untuk mengonfigurasi dan menjalankan proyek ini di
    ```bash
    php artisan serve
 
-  Akses aplikasi melalui browser di alamat:
+10. **Akses Aplikasi:**
+   Akses aplikasi melalui browser di alamat:
    ```bash
    http://127.0.0.1:8000
 
-   Data User Login:
+10. **Data User Login:**
+   ```bash
    email    : ainul@gmail.com
    password : ainul123
