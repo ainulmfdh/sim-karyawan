@@ -6,6 +6,11 @@ Panduan lengkap arsitektur sistem, rancangan database, dan tata cara menjalankan
 
 Aplikasi ini dibangun menggunakan framework **Laravel** versi 12 dengan pendekatan arsitektur MVC (Model-View-Controller), antarmuka Tailwind CSS, serta Alpine.js untuk interaktivitas komponen dinamis. Sistem ini dirancang untuk mengelola data karyawan secara komprehensif, mencatat log histori perubahan aktivitas, memantau statistik dashboard secara *real-time*, serta menghasilkan laporan bulanan dalam format Excel.
 
+Web : https://simkaryawan.hostifame.id  
+
+email    : ainul@gmail.com  
+password : ainul123
+
 ## 2. Rancangan Database & Relasi Tabel
 
 Sistem ini dirancang menggunakan beberapa tabel utama yang saling berelasi untuk memastikan integritas data:
