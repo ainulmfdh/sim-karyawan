@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Buat User untuk Login
+        // Buat User untuk Login
         User::factory()->create([
             'name' => 'Ainul',
             'email' => 'ainul@gmail.com',
             'password' => Hash::make('ainul123'),
         ]);
 
-        // 2. Jalankan Seeder Karyawan
+        // Jalankan Seeder Karyawan
         $this->call([
             EmployeeSeeder::class,
         ]);

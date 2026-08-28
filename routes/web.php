@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('employees/export/form', [EmployeeController::class, 'exportForm'])->name('employees.export.form');
     Route::post('employees/export/store', [EmployeeController::class, 'storeReport'])->name('employees.export.store');
     Route::get('employees/export/excel/{period}', [EmployeeController::class, 'exportExcel'])->name('employees.export.excel');
+    Route::delete('employees/export/{id}', [EmployeeController::class, 'destroyReport'])->name('employees.export.destroy');
     Route::get('documentation', [EmployeeController::class, 'docs'])->name('employees.docs');
 });
 

@@ -8,9 +8,7 @@ use Illuminate\Database\Seeder;
 
 class EmployeeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    // Buat 10 data seeder di database
     public function run(): void
     {
         $employees = [

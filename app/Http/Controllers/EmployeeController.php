@@ -10,9 +10,6 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
     // Dashboard
     public function dashboard()
@@ -58,7 +55,7 @@ class EmployeeController extends Controller
         ));
     }
 
-    // Data Karyawan
+    // View Data Karyawan
     public function index(Request $request)
     {
         $perPage = $request->input('per_page', 10); // Default tampilkan 10 per halaman
@@ -75,17 +72,13 @@ class EmployeeController extends Controller
         return view('employees.index', compact('employees', 'perPage'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // View modal tambah karyawan
     public function create()
     {
         return view('employees.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Menambahkan data karyawan
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -101,25 +94,19 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')->with('success', 'Data karyawan berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    // Menampilkan data karyawan
     public function show(Employee $employee)
     {
         return view('employees.edit', compact('employee'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // Edit Data karyawan
     public function edit(Employee $employee)
     {
         return view('employees.edit', compact('employee'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // Update data karyawan
     public function update(Request $request, Employee $employee)
     {
         $validated = $request->validate([
@@ -135,9 +122,7 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')->with('success', 'Data karyawan berhasil diperbarui.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // Hapus Data karyawan
     public function destroy(Employee $employee)
     {
         $employee->delete();
@@ -156,7 +141,7 @@ class EmployeeController extends Controller
         return view('employees.all-history', compact('activities'));
     }
 
-// 1. Menampilkan Halaman View + Tabel Riwayat Laporan
+    // Menampilkan Halaman View & Tabel Riwayat Laporan
     public function exportForm()
     {
         // Ambil daftar riwayat laporan dari database diurutkan dari yang terbaru
@@ -165,7 +150,7 @@ class EmployeeController extends Controller
         return view('employees.export', compact('reports'));
     }
 
-    // 2. Menyimpan Riwayat Laporan Baru dari Modal
+    // Menyimpan Riwayat Laporan Baru dari Modal
     public function storeReport(Request $request)
     {
         $request->validate([
@@ -179,7 +164,7 @@ class EmployeeController extends Controller
         return redirect()->route('employees.export.form')->with('success', 'Data Laporan berhasil dibuat!');
     }
 
-    // 3. Download File Excel Berdasarkan Periode dari Tabel
+    // Download File Excel Berdasarkan Periode dari Tabel
     public function exportExcel($period)
     {
         // $period berformat 'YYYY-MM'
@@ -222,9 +207,22 @@ class EmployeeController extends Controller
         }, $fileName);
     }
 
-    // Dokumentasi
+    // View Dokumentasi
     public function docs()
     {
         return view('employees.docs');
+    }
+
+    // Delete Laporan
+    public function destroyReport($id)
+    {
+        // Cari data laporan berdasarkan ID
+        $report = Report::findOrFail($id);
+        
+        // Hapus data tersebut dari database
+        $report->delete();
+
+        // Arahkan kembali ke halaman sebelumnya dengan pesan notifikasi sukses
+        return redirect()->back()->with('success', 'Data riwayat laporan berhasil dihapus!');
     }
 }

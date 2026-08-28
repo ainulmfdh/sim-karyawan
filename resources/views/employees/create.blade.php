@@ -57,9 +57,8 @@
                                 </div>
                             @endif
                             
-                            <div class="grid grid-cols-1 gap-6">
-                                <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-4">
-                                    <h3 class="text-xs font-bold text-gray-800 uppercase tracking-wider border-b pb-3 mb-4">Informasi Karyawan</h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-2">
 
                                     <div>
                                         <x-input-label for="employee_code" value="ID / Kode Karyawan" />   

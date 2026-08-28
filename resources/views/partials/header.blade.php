@@ -8,7 +8,7 @@
     </div>
     
     <div class="header-right">
-        <div class="header-icon-group">
+        {{-- <div class="header-icon-group">
             <div class="dropdown">
                 <button class="icon-btn dropdown-toggle">
                     <i class="fas fa-bell"></i>
@@ -22,7 +22,7 @@
                     <div class="dropdown-footer"><a href="#">View All</a></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
         <div class="dropdown profile-dropdown">
             <button class="profile-btn dropdown-toggle">
